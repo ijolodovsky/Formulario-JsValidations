@@ -1,0 +1,257 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafe;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: #1c1a26;
+    color: #e1e1e1;
+}
+
+.formulario {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .formulario {
+    background-color: #282536;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #615b72;
+}
+
+body.dark-mode label {
+    color: #cdc2dc;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="password2"],
+input[type="submit"] {
+    font-family: 'Roboto', sans-serif;
+    padding: 0.8rem;
+    border: 1px solid #cdc2dc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"],
+body.dark-mode input[type="password2"] {
+    background-color: #444;
+    border-color: #555;
+    color: #e1e1e1;
+}
+
+input[type="submit"] {
+    font-family: 'Roboto', sans-serif;
+    background-color: #6750a5;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode input[type="submit"] {
+    color: #3d3a3a;
+}
+
+input[type="submit"]:hover {
+    background-color: #cdc2dc;
+}
+
+body.dark-mode input[type="submit"] {
+    background-color: #cdc2dc;
+}
+
+body.dark-mode input[type="submit"]:hover {
+    background-color: #cdc2dc;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="password2"]:focus {
+    border-color: #7d5261;
+    box-shadow: 0 0 8px rgba(125, 82, 97, 0.4);
+    outline: none;
+}
+
+body.dark-mode input[type="text"]:focus,
+body.dark-mode input[type="email"]:focus,
+body.dark-mode input[type="password"]:focus,
+body.dark-mode input[type="password2"]:focus {
+    border-color: #f3b8b5;
+    box-shadow: 0 0 8px rgba(165, 114, 132, 0.4);
+}
+
+input[type="text"].incorrect,
+input[type="email"].incorrect,
+input[type="password"].incorrect,
+input[type="password2"].incorrect {
+    border-color: #b4251f;
+    background-color: #fdd;
+}
+
+body.dark-mode input[type="text"].incorrect,
+body.dark-mode input[type="email"].incorrect,
+body.dark-mode input[type="password"].incorrect,
+body.dark-mode input[type="password2"].incorrect {
+    background-color: #efb8c9;
+    border-color: #ecdae0;
+}
+
+input[type="text"].correct,
+input[type="email"].correct,
+input[type="password"].correct,
+input[type="password2"].correct {
+    border-color: #6750a5; 
+    background-color: #e1d8f7;
+}
+
+body.dark-mode input[type="text"].correct,
+body.dark-mode input[type="email"].correct,
+body.dark-mode input[type="password"].correct,
+body.dark-mode input[type="password2"].correct {
+    background-color: #cdc2dc;
+    border-color: #d0bcff;
+}
+
+.error-message {
+    color: #b4251f;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+body.dark-mode .error-message {
+    color: #fa9393;
+}
+
+input.error {
+    border-color: #b4251f;
+    background-color: #fdd;
+}
+
+input.correct {
+    border-color: #6750a5;
+    background-color: #e1d8f7;
+}
+
+.toggle-btn {
+    background-color: #6750a500;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #615b7200;
+    color: #555;
+}
+
+body.dark-mode .toggle-btn {
+    background-color: #44444400;
+    color: white;
+}
+
+body.dark-mode .toggle-btn:hover {
+    background-color: #66666600;
+    color: #a3a2a2;
+}
+
+body.dark-mode #toggle-dark-mode i {
+    display: none;
+}
+
+body.light-mode #toggle-dark-mode i {
+    display: inline-block;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+
+}
+
+
+@media (max-width: 768px) {
+    .formulario {
+        padding: 1rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="password2"],
+    input[type="submit"] {
+        font-size: 1rem;
+    }
+}
+
+input[type="text"].error,
+input[type="email"].error,
+input[type="password"].error,
+input[type="password2"].error,
+input[type="text"].correct,
+input[type="email"].correct,
+input[type="password"].correct,
+input[type="password2"].correct {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
