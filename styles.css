@@ -53,6 +53,25 @@ body.dark-mode label {
     color: #cdc2dc;
 }
 
+.password-container {
+    position: relative;
+}
+
+.password-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #6750a5;
+}
+
+.password-container i:hover {
+    color: #444;
+}
+
+
 input[type="text"],
 input[type="email"],
 input[type="password"],

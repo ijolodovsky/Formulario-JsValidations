@@ -14,61 +14,81 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
+  // Obtener los elementos del ojo (íconos) y los campos de contraseñas
+const togglePassword = document.getElementById('toggle-password');
+const password = document.getElementById('password');
+const togglePassword2 = document.getElementById('toggle-password2');
+const password2 = document.getElementById('password2');
+
+// Función para mostrar u ocultar la contraseña
+togglePassword.addEventListener('click', function () {
+    const type = password.type === 'password' ? 'text' : 'password';
+    password.type = type;
+    this.classList.toggle('fa-eye-slash');
+});
+
+// Función para mostrar u ocultar la confirmación de contraseña
+togglePassword2.addEventListener('click', function () {
+    const type = password2.type === 'password' ? 'text' : 'password';
+    password2.type = type;
+    this.classList.toggle('fa-eye-slash');
+});
+
+
   const form = document.querySelector("form");
-  const nombreInput = document.getElementById("nombre");
-  const emailInput = document.getElementById("email");
-  const passwordInput = document.getElementById("password");
-  const password2Input = document.getElementById("password2");
+  const nombre = document.getElementById("nombre");
+  const email = document.getElementById("email");
+
 
   form.addEventListener("input", function () {
-    if (!validateName(nombreInput.value.trim())) {
-      nombreInput.classList.add("incorrect");
-      nombreInput.classList.remove("correct");
+    if (!validateName(nombre.value.trim())) {
+      nombre.classList.add("incorrect");
+      nombre.classList.remove("correct");
 
       showError("nombre-error", "El nombre debe tener al menos 3 caracteres.");
     } else {
-      nombreInput.classList.add("correct");
-      nombreInput.classList.remove("incorrect");
+      nombre.classList.add("correct");
+      nombre.classList.remove("incorrect");
       clearError("nombre-error");
     }
 
-    if (!validateEmail(emailInput.value.trim())) {
-      emailInput.classList.add("incorrect");
-      emailInput.classList.remove("correct");
+    if (!validateEmail(email.value.trim())) {
+      email.classList.add("incorrect");
+      email.classList.remove("correct");
       showError("email-error", "Por favor ingrese un email válido.");
     } else {
-      emailInput.classList.add("correct");
-      emailInput.classList.remove("incorrect");
+      email.classList.add("correct");
+      email.classList.remove("incorrect");
       clearError("email-error");
     }
 
-    if (!validatePassword(passwordInput.value.trim())) {
-      passwordInput.classList.add("incorrect");
-      passwordInput.classList.remove("correct");
+    if (!validatePassword(password.value.trim())) {
+      password.classList.add("incorrect");
+      password.classList.remove("correct");
 
       showError(
         "password-error",
         "La contraseña debe tener al menos 8 caracteres."
       );
     } else {
-      passwordInput.classList.add("correct");
-      passwordInput.classList.remove("incorrect");
+      password.classList.add("correct");
+      password.classList.remove("incorrect");
       clearError("password-error");
     }
 
     if (
       !validateRepeatPassword(
-        passwordInput.value.trim(),
-        password2Input.value.trim()
+        password.value.trim(),
+        password2.value.trim()
       )
     ) {
-      password2Input.classList.add("incorrect");
-      password2Input.classList.remove("correct");
+      password2.classList.add("incorrect");
+      password2.classList.remove("correct");
 
       showError("password2-error", "Las contraseñas no coinciden.");
     } else {
-      password2Input.classList.add("correct");
-      password2Input.classList.remove("incorrect");
+      password2.classList.add("correct");
+      password2.classList.remove("incorrect");
       clearError("password2-error");
     }
 
